@@ -49,4 +49,12 @@ document.addEventListener('keydown', (event) => {
     if (event.key === 'e') {
         letters = letters === '01' ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz' : '01';
     }
+    // 改回单独 Esc 键退出
+    if (event.key === 'Escape') {
+        if (confirm('确定要退出吗？')) {
+            window.close();
+            // 如果window.close()不起作用，强制关闭标签页
+            window.location.href = "about:blank";
+        }
+    }
 }); 
